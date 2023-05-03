@@ -1,0 +1,130 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: aliceblue;
+    background-size: cover;
+    background-position: center;
+}
+.wrapper{
+    position: relative;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    width: 440px;
+    height: 750px;
+    background: transparent;
+    border: 2px solid rgba(255, 255, 255, .5);
+    border-radius: 20px;
+    backdrop-filter: blur(20px);
+    box-shadow: 0 0 30px rgba(0, 0, 0, .5);
+    display: flex;
+    /* justify-content: center;
+    align-items: center; */
+    overflow: hidden;
+    transition: scale(0);
+    transition: height .2s ease;
+}
+.wrapper .form-box{
+    width: 100%;
+    padding: 20px;
+}
+.wrapper.active .form-box.login{
+    transition: none;
+    transform: translateX(-400px);
+}
+
+.wrapper .form-boxregister{
+    position: absolute;
+    transition: none;
+    transform: translateX(400px);
+}
+
+.wrapper.active .form-boxregister{
+    transition: transform .18s ease;
+    transform: translateX(0);
+}
+
+.form-box h2{
+    font-size: 2em;
+    color: black;
+    text-align: center;
+}
+
+.input-box{
+    position: relative;
+    width: 100%;
+    height: 50px;
+    border-bottom: 2px solid #000;
+    margin: 30px;
+}
+
+.input-box label{
+    position: absolute;
+    top: 50%;
+    left: 5px;
+    transform: translateX(-50%);
+    font-size: 1em;
+    color: #000;
+    font-weight: 500;
+    pointer-events: none;
+    transition: -5s;
+}
+
+.input-box input:focus~label,
+.input-box input:valid~label{
+    top: -5px;
+}
+
+.input-box input{
+    width: 100%;
+    height: 100%;
+    background: transparent;
+    border: none;
+    outline: none;
+    font-size: 1em;
+    color: #000;
+    font-weight: 600;
+    padding: 0 35 0 5px;
+}
+
+.btn1{
+    width: 100%;
+    height: 45px;
+    background: #000;
+    outline: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 1em;
+    color: #fff;
+    font-weight: 500;
+}
+.row button{
+    display: inline-block;
+    margin-top: 20px;
+    width: 100%;
+}
+
+.login-register{
+    font-size: .9em;
+    color: #000;
+    text-align: center;
+    font-family: 500;
+    margin: 25px 0 10px; 
+}
+
+.login-register p a{
+    color: #000;
+    text-decoration: none;
+    font-weight: 600;
+} 
+
+.login-register p a{
+    text-decoration: underline;
+}
