@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1:3306
--- Generation Time: Apr 29, 2023 at 02:48 PM
+-- Generation Time: May 04, 2023 at 03:12 PM
 -- Server version: 5.7.24
 -- PHP Version: 7.2.14
 
@@ -25,17 +25,51 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Table structure for table `feedback`
+-- Table structure for table `community`
 --
 
-DROP TABLE IF EXISTS `feedback`;
-CREATE TABLE IF NOT EXISTS `feedback` (
+DROP TABLE IF EXISTS `community`;
+CREATE TABLE IF NOT EXISTS `community` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
-  `name` varchar(50) NOT NULL,
-  `email` varchar(50) NOT NULL,
-  `body` varchar(50) NOT NULL,
+  `user_id` int(11) NOT NULL,
+  `full_name` varchar(50) NOT NULL,
+  `date` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  `attachment` varchar(10000) NOT NULL,
+  `post` varchar(10000) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+) ENGINE=MyISAM AUTO_INCREMENT=35 DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `community`
+--
+
+INSERT INTO `community` (`id`, `user_id`, `full_name`, `date`, `attachment`, `post`) VALUES
+(12, 1, 'faithy', '2023-05-03 10:21:43', '02052393648.jpg', 'Trying to text run something'),
+(11, 1, 'faithy', '2023-05-03 10:21:43', '02052393529.jpg', 'I&#039;m so happy that I&#039;m rounding up my project'),
+(10, 1, 'faithy', '2023-05-03 10:21:43', '02052393325.jpg', 'Hello my neighbour&#039;s '),
+(9, 1, 'faithy', '2023-05-03 10:21:43', '02052392311.jpg', 'Good morning People'),
+(13, 1, 'faithy', '2023-05-03 10:21:43', '02052393827.webp', 'Test run again'),
+(14, 1, 'faithy', '2023-05-03 10:21:43', '02052393858.jpg', 'Test run again'),
+(15, 1, 'faithy', '2023-05-03 10:21:43', '02052394143.jpg', 'Better work this time around'),
+(16, 1, 'faithy', '2023-05-03 10:21:43', '02052394405.jpg', 'Test run again'),
+(17, 1, 'faithy', '2023-05-03 10:21:43', '02052394624.jpg', 'comedy'),
+(18, 1, 'faithy', '2023-05-03 10:21:43', '020523111130.jpg', 'Hello fellas...hope you&#039;ll slept well'),
+(19, 1, 'JACHIE', '2023-05-03 10:21:43', '030523120939.jpg', 'GOOD MORNING MY NEIGHBOURS'),
+(20, 38, 'agah samuel', '2023-05-03 10:21:43', '03052383227.jpg', 'Hello world'),
+(21, 38, 'agah samuel', '2023-05-03 10:21:43', '03052395549.html', 'Hello my neighbour&#039;s '),
+(22, 38, 'agah samuel', '2023-05-03 10:21:43', '03052395802.html', 'Hello my neighbor '),
+(23, 38, 'agah samuel', '2023-05-03 10:21:43', '030523100006.html', 'Hello world'),
+(24, 38, 'agah samuel', '2023-05-03 10:21:43', '030523100121.html', 'Better work well'),
+(25, 38, 'agah samuel', '2023-05-03 10:21:43', '030523100243.html', 'Work pls'),
+(26, 38, 'agah samuel', '2023-05-03 10:21:43', '030523100346.html', 'God is good'),
+(27, 38, 'agah samuel', '2023-05-03 10:21:43', '030523100526.jpg', 'kghjkghghjghjghjg'),
+(28, 38, 'agah samuel', '2023-05-03 10:21:43', '030523100550.html', 'ghjhlkjhjhjhjhjhj'),
+(29, 38, 'agah samuel', '2023-05-03 10:21:43', '030523100719.jpg', 'Hello my neighbours'),
+(30, 38, 'agah samuel', '2023-05-03 10:25:50', '030523102550.jpg', 'Time wasn&#039;t working well, I just debuged my code, just hoping it works well '),
+(31, 38, 'agah samuel', '2023-05-03 10:59:20', '', 'hello'),
+(32, 38, 'agah samuel', '2023-05-03 10:59:47', '030523105947.jpg', ''),
+(33, 38, 'agah samuel', '2023-05-03 13:08:52', '03052310852.pdf', 'the man'),
+(34, 38, 'agah samuel', '2023-05-03 13:09:28', '03052310928.jpg', 'the man');
 
 -- --------------------------------------------------------
 
@@ -55,7 +89,7 @@ CREATE TABLE IF NOT EXISTS `profile` (
   `sessionofadmission` varchar(50) NOT NULL,
   `image` varchar(50) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=18 DEFAULT CHARSET=latin1;
+) ENGINE=MyISAM AUTO_INCREMENT=22 DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `profile`
@@ -68,7 +102,7 @@ INSERT INTO `profile` (`id`, `user_id`, `full_name`, `username`, `email`, `phone
 (4, 11, 'Aga', 'John', 'agahinalegwusamuel@gmail.com', '4324535', 'Female', '2001/2002', '123562342111127042023122410.jpg'),
 (5, 11, 'Aga', 'John', 'agahinalegwusamuel@gmail.com', '4324535', 'Female', '2001/2002', '123562342111127042023122410.jpg'),
 (6, 16, 'Isama Michael', 'isamamichael', 'isama@gmail.com', '98023901', 'female', '2000/2001', '9802390128042023134033.jpg'),
-(7, 1, 'faihyt', 'faith', 'charabeauty001@gmail.com', '31322', 'female', '2020/2021', '3132228042023134956.jpg'),
+(7, 1, 'JACHIE', 'CHAN', 'charabeauty001@gmail.com', '5555555555', 'Male', '2020/2021', '3132228042023134956.jpg'),
 (8, 17, 'nowww', 'combat', 'n@gmail.com', '765432', 'female', '2020/2021', '76543228042023135310.jpg'),
 (9, 18, 'wow', 'wow', 'g@gmail.com', '39393', 'female', '2001/2002', '3939328042023135959.jpg'),
 (10, 19, 'Inalegwu Sam ', 'Inalegwu Sam ', 'me@gmail.com', '657438', 'female', '2020/2021', '65743828042023141056.jpg'),
@@ -78,7 +112,11 @@ INSERT INTO `profile` (`id`, `user_id`, `full_name`, `username`, `email`, `phone
 (14, 24, 'Paul', 'Walker', 'p@gmail.com', '333333', 'female', '2020/2021', '33333329042023113335.jpg'),
 (15, 25, 'Bruise', 'Lee', 'l@gmail.com', '334433', 'female', '2020/2021', '33443329042023141154.jpeg'),
 (16, 27, 'jfjfjf', 'kfkfkf', 'b@gmail.com', '3232333', 'female', '2020/2021', '323233329042023143812.jpg'),
-(17, 28, 'ututut', 'jrjrjr', 'kkk@gmail.com', '465455', 'female', '2020/2021', '46545529042023144102.jpg');
+(17, 28, 'ututut', 'jrjrjr', 'kkk@gmail.com', '465455', 'female', '2020/2021', '46545529042023144102.jpg'),
+(18, 29, 'Jet', 'Cha', 'q@gmail.com', '213215', 'Male', '2001/2002', '21321501052023110254.jpg'),
+(21, 38, 'agah samuel', 'John', 'abc.234@gmail.com', '232333', 'female', '2022/2023', '2323330305202383139.jpg'),
+(19, 36, 'fope', 'ologun', 'f@gmail.com', '5657656768', 'female', '2000/2001', '565765676802052023135543.png'),
+(20, 35, 'fope', 'fopes', 'agbosamuelgabriel@gmail.com', '78787878787', 'female', '2000/2001', '7878787878702052023140217.jpg');
 
 -- --------------------------------------------------------
 
@@ -92,7 +130,7 @@ CREATE TABLE IF NOT EXISTS `users` (
   `email` varchar(50) NOT NULL,
   `password` varchar(50) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=29 DEFAULT CHARSET=latin1;
+) ENGINE=MyISAM AUTO_INCREMENT=39 DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `users`
@@ -119,7 +157,17 @@ INSERT INTO `users` (`id`, `email`, `password`) VALUES
 (25, 'l@gmail.com', '11111'),
 (26, 'bruiselee@gmail.com', '11111'),
 (27, 'b@gmail.com', '555555'),
-(28, 'kkk@gmail.com', '11111');
+(28, 'kkk@gmail.com', '11111'),
+(29, 'q@gmail.com', '11111'),
+(30, '##$$&*_++?|Q@gmail.www', '11111'),
+(31, 'agah@gmail.com', 'Jedagahs1'),
+(32, 'pp@gmail.com', 'Jedagahs1'),
+(33, 'yy@gmail.com', 'Jutagahs1'),
+(34, 'oo@gmail.com', '11111De'),
+(35, 'agbosamuelgabriel@gmail.com', 'SamG107#'),
+(36, 'f@gmail.com', 'A2aaa'),
+(37, '#$%^@gmail.com', '11111aA'),
+(38, 'abc.234@gmail.com', '11111aA');
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
